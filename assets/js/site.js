@@ -5,6 +5,7 @@
 
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var EN = document.documentElement.lang === 'en';
 
   /* 1. Меню-бургер (мобильная версия) */
   $$('.js-wrapper').forEach(function (wrap) {
@@ -13,7 +14,7 @@
     if (!burger || !menu) return;
     burger.setAttribute('role', 'button');
     burger.setAttribute('tabindex', '0');
-    burger.setAttribute('aria-label', 'Меню');
+    burger.setAttribute('aria-label', EN ? 'Menu' : 'Меню');
     burger.setAttribute('aria-expanded', 'false');
 
     var header = burger.closest('.s-header-type-2');
@@ -99,7 +100,7 @@
         var b = document.createElement('button');
         b.type = 'button';
         b.className = 'site-dot';
-        b.setAttribute('aria-label', 'Слайд ' + (i + 1));
+        b.setAttribute('aria-label', (EN ? 'Slide ' : 'Слайд ') + (i + 1));
         b.addEventListener('click', function () { go(i); });
         li.appendChild(b);
         dots.appendChild(li);
@@ -137,7 +138,7 @@
       var x = document.createElement('button');
       x.type = 'button';
       x.className = 'site-lightbox__close';
-      x.setAttribute('aria-label', 'Закрыть');
+      x.setAttribute('aria-label', EN ? 'Close' : 'Закрыть');
       x.textContent = '×';
       box.appendChild(big);
       box.appendChild(x);
