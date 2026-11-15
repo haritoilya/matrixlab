@@ -22,7 +22,14 @@
 .ml-lang a:not([aria-current]):hover { background: #e6f3f5; }
 @media print { .ml-lang { display: none; } }
 
-/* подмигивание девушки на главной: кадр с закрытым правым глазом поверх фона раз в 5 секунд */
-.ml-blink { position: absolute; inset: 0; background-size: inherit; background-position: inherit; background-repeat: no-repeat; opacity: 0; pointer-events: none; animation: ml-blink 5s infinite 1.5s; }
-@keyframes ml-blink { 0%, 90% { opacity: 0; } 92%, 96% { opacity: 1; } 99%, 100% { opacity: 0; } }
+/* подмигивание девушки на главной: раз в 5 секунд верхний глаз плавно закрывается (4 кадра века поверх фона) и открывается */
+.ml-blink { position: absolute; inset: 0; background-size: inherit; background-position: inherit; background-repeat: no-repeat; opacity: 0; pointer-events: none; animation: 5s infinite 1s; }
+.ml-blink-1 { animation-name: ml-wink-1; }
+.ml-blink-2 { animation-name: ml-wink-2; }
+.ml-blink-3 { animation-name: ml-wink-3; }
+.ml-blink-4 { animation-name: ml-wink-4; }
+@keyframes ml-wink-1 { 0%, 77.4% { opacity: 0; } 78%, 92.6% { opacity: 1; } 93.2%, 100% { opacity: 0; } }
+@keyframes ml-wink-2 { 0%, 79.2% { opacity: 0; } 79.8%, 91% { opacity: 1; } 91.6%, 100% { opacity: 0; } }
+@keyframes ml-wink-3 { 0%, 81% { opacity: 0; } 81.6%, 89.4% { opacity: 1; } 90%, 100% { opacity: 0; } }
+@keyframes ml-wink-4 { 0%, 82.8% { opacity: 0; } 83.4%, 87.8% { opacity: 1; } 88.4%, 100% { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .ml-blink { animation: none; } }
