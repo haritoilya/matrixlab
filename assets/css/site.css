@@ -1,0 +1,16 @@
+/* Дополнения к стилям конструктора: состояния, которые раньше рисовал его JS. */
+.s-faq-type-3__ask { cursor: pointer; }
+.s-faq-type-3__ask:focus-visible,
+.s-header-type-2__burger:focus-visible,
+.site-dot:focus-visible { outline: 2px solid #006F89; outline-offset: 2px; }
+.s-header-type-2__burger { cursor: pointer; }
+
+/* точки слайдера товаров */
+.s-product-services-type-4__dots .js-dots { display: flex; justify-content: center; gap: 10px; list-style: none; margin: 24px 0 0; padding: 0; }
+.site-dot { width: 10px; height: 10px; padding: 0; border: 0; border-radius: 50%; background: rgba(255,255,255,.45); cursor: pointer; }
+.site-dot_active { background: #fff; }
+
+/* увеличение фото */
+.site-lightbox { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; background: rgba(17,17,17,.85); cursor: zoom-out; }
+.site-lightbox img { max-width: 92vw; max-height: 92vh; object-fit: contain; background: #fff; border-radius: 8px; }
+.site-lightbox__close { position: absolute; top: 16px; right: 20px; width: 40px; height: 40px; border: 0; border-radius: 50%; background: rgba(255,255,255,.9); font-size: 28px; line-height: 1; cursor: pointer; }
