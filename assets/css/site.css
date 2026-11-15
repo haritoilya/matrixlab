@@ -21,3 +21,8 @@
 .ml-lang a[aria-current] { background: #0a6f80; color: #fff; }
 .ml-lang a:not([aria-current]):hover { background: #e6f3f5; }
 @media print { .ml-lang { display: none; } }
+
+/* подмигивание девушки на главной: кадр с закрытым правым глазом поверх фона раз в 5 секунд */
+.ml-blink { position: absolute; inset: 0; background-size: inherit; background-position: inherit; background-repeat: no-repeat; opacity: 0; pointer-events: none; animation: ml-blink 5s infinite 1.5s; }
+@keyframes ml-blink { 0%, 90% { opacity: 0; } 92%, 96% { opacity: 1; } 99%, 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .ml-blink { animation: none; } }
