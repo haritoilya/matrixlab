@@ -13,8 +13,8 @@ Usage (from the site root):  python scripts/build-en.py
 """
 import json, os, re, sys, glob
 
-BASE = "/matrixlab"
-SITE_URL = "https://haritoilya.github.io/matrixlab"
+BASE = ""
+SITE_URL = "https://matrixlab.pro"
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CYR = re.compile('[А-Яа-яЁё]')
